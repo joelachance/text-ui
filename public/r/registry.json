@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "echo-text",
+  "homepage": "https://github.com/joe/echo-text",
+  "items": [
+    {
+      "name": "ctx-logo",
+      "type": "registry:component",
+      "title": "CTX Logo",
+      "description": "An interactive layered text logo inspired by the CTX site.",
+      "files": [
+        {
+          "path": "registry/components/ctx-logo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
