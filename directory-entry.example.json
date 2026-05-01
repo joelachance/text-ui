@@ -1,0 +1,7 @@
+{
+  "name": "@text-ui",
+  "homepage": "https://joelachance.github.io/text-ui/docs",
+  "url": "https://joelachance.github.io/text-ui/r/{name}.json",
+  "description": "A shadcn/ui registry with layered stroke text that follows the pointer—minimal setup, drop-in component.",
+  "logo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><rect width='120' height='120' rx='24' fill='var(--foreground, currentColor)' fill-opacity='0.08'/><text x='60' y='78' text-anchor='middle' font-family='system-ui,sans-serif' font-size='42' font-weight='600' fill='var(--foreground, currentColor)'>Tt</text></svg>"
+}

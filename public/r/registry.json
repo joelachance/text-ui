@@ -1,17 +1,17 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "text-trail",
-  "homepage": "https://joelachance.github.io/text-trail/",
+  "name": "texttrails",
+  "homepage": "https://joelachance.github.io/text-ui/docs",
   "items": [
     {
-      "name": "text-trail",
+      "name": "texttrails",
       "type": "registry:component",
-      "title": "TextTrail",
-      "description": "An interactive layered text trail.",
+      "title": "TextTrails",
+      "description": "Layered stroke text that follows the pointer for a simple motion trail effect.",
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/components/text-trail.tsx",
+          "path": "registry/components/texttrails.tsx",
           "type": "registry:component"
         }
       ]

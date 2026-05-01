@@ -1,11 +1,11 @@
 {
-  "name": "text-trail",
+  "name": "text-ui",
   "private": true,
   "type": "module",
   "scripts": {
     "registry:build": "shadcn build",
     "playground": "bun run scripts/playground-dev.ts",
-    "pages:prepare": "bun run registry:build && mkdir -p docs && rm -rf docs/r && cp -R public/r docs/r"
+    "pages:prepare": "bun run registry:build && rm -rf r && cp -R public/r r"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.4",

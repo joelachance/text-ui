@@ -19,6 +19,6 @@
   },
   "iconLibrary": "lucide",
   "registries": {
-    "@text-trail": "https://joelachance.github.io/text-trail/r/{name}.json"
+    "@text-ui": "https://joelachance.github.io/text-ui/r/{name}.json"
   }
 }

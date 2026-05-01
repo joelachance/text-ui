@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "text-trail",
+      "name": "text-ui",
       "devDependencies": {
         "@tailwindcss/cli": "^4.2.4",
         "@types/node": "^25.6.0",
