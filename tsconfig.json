@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
@@ -10,5 +11,11 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": ["registry/**/*.ts", "registry/**/*.tsx", "lib/**/*.ts"]
+  "include": [
+    "registry/**/*.ts",
+    "registry/**/*.tsx",
+    "lib/**/*.ts",
+    "playground/**/*.tsx",
+    "scripts/**/*.ts"
+  ]
 }

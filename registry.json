@@ -1,16 +1,17 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "echo-text",
-  "homepage": "https://github.com/joe/echo-text",
+  "homepage": "https://github.com/joelachance/text-trail",
   "items": [
     {
-      "name": "ctx-logo",
+      "name": "text-trail",
       "type": "registry:component",
-      "title": "CTX Logo",
-      "description": "An interactive layered text logo inspired by the CTX site.",
+      "title": "TextTrail",
+      "description": "An interactive layered text trail.",
+      "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/components/ctx-logo.tsx",
+          "path": "registry/components/text-trail.tsx",
           "type": "registry:component"
         }
       ]

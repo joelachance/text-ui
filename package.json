@@ -3,14 +3,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "registry:build": "shadcn build"
+    "registry:build": "shadcn build",
+    "playground": "bun run scripts/playground-dev.ts"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "clsx": "^2.1.1",
     "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "shadcn": "^4.6.0",
     "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
   }
 }

@@ -1,27 +1,31 @@
 "use client";
 
-import { useState, type ComponentProps, type PointerEvent } from "react";
+/**
+ * Layered stroke text that follows pointer movement. Content is the `text` string only
+ * (not arbitrary children) so layers stay plain text. Depends on `cn` from registry `utils`.
+ */
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-export type CtxLogoProps = ComponentProps<"div"> & {
+export type TextTrailProps = React.ComponentProps<"div"> & {
   text?: string;
   fontClassName?: string;
 };
 
-export function CtxLogo({
-  text = "ctx",
+export function TextTrail({
+  text = "text",
   className,
   fontClassName,
-  "aria-label": ariaLabel = "CTX logo",
+  "aria-label": ariaLabel,
   role = "img",
   onPointerMove,
   onPointerLeave,
   ...props
-}: CtxLogoProps) {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+}: TextTrailProps) {
+  const [offset, setOffset] = React.useState({ x: 0, y: 0 });
 
-  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     onPointerMove?.(event);
 
     if (event.defaultPrevented) {
@@ -35,7 +39,7 @@ export function CtxLogo({
     setOffset({ x: -nx, y: -ny });
   };
 
-  const handlePointerLeave = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerLeave = (event: React.PointerEvent<HTMLDivElement>) => {
     onPointerLeave?.(event);
 
     if (event.defaultPrevented) {
@@ -57,10 +61,10 @@ export function CtxLogo({
 
   return (
     <div
-      aria-label={ariaLabel}
-      data-slot="ctx-logo"
+      aria-label={ariaLabel ?? text}
+      data-slot="text-trail"
       role={role}
-      className={cn("relative", className)}
+      className={cn("relative select-none", className)}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       {...props}
