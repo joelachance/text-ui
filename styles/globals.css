@@ -1,0 +1,14 @@
+/*
+ * Repo Tailwind entry: scans registry sources (and the local playground) so
+ * utility classes resolve when developing here. Consumers use their own Tailwind
+ * setup; this file is not part of the published registry item JSON.
+ */
+@import "tailwindcss";
+
+@source "../registry/**/*.tsx";
+@source "../playground/**/*.{html,tsx}";
+
+/* Minimal theme so `text-foreground` matches shadcn-style usage locally */
+@theme {
+  --color-foreground: oklch(0.985 0 0);
+}

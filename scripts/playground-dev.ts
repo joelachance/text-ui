@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 // Ensure bundle.css exists before the dev server serves index.html.
-execSync("bun x tailwindcss -i ./playground/input.css -o ./playground/bundle.css", {
+execSync("bun x tailwindcss -i ./styles/globals.css -o ./playground/bundle.css", {
   cwd: root,
   stdio: "inherit",
 });
@@ -21,7 +21,7 @@ const tailwind = spawn(
     "x",
     "tailwindcss",
     "-i",
-    "./playground/input.css",
+    "./styles/globals.css",
     "-o",
     "./playground/bundle.css",
     "--watch",
