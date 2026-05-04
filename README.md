@@ -1,8 +1,9 @@
-# EchoText
+# text-ui
 
 Layered text that follows the pointer. Make cool logos, or any text interactive.
 
-<video src="./demo.mp4" width="100%" controls muted loop playsinline></video>
+<!-- GitHub does not resolve relative URLs in <video>; use raw branch URL. -->
+<video src="https://raw.githubusercontent.com/joelachance/text-ui/main/demo.mp4" width="100%" controls muted loop playsinline preload="metadata"></video>
 
 ## Install
 
