@@ -12,10 +12,10 @@
     "target": "esnext"
   },
   "include": [
+    "playground-entry.tsx",
     "registry/**/*.ts",
     "registry/**/*.tsx",
     "lib/**/*.ts",
-    "playground/**/*.tsx",
     "scripts/**/*.ts"
   ]
 }

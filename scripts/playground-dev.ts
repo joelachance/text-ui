@@ -1,5 +1,5 @@
 /**
- * Local dev only: builds Tailwind for the playground, watches CSS, and serves
+ * Local dev only: bundles the playground entry, builds Tailwind, and serves
  * playground/index.html with `bun --hot`. Not part of the shadcn registry.
  * Run: `bun run playground`
  */
@@ -9,11 +9,32 @@ import { fileURLToPath } from "url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
-// Ensure bundle.css exists before the dev server serves index.html.
+// Ensure compiled assets exist before the dev server serves index.html.
+execSync(
+  "bun build --target=browser --outfile ./playground/main.js ./playground-entry.tsx",
+  {
+    cwd: root,
+    stdio: "inherit",
+  },
+);
+
 execSync("bun x tailwindcss -i ./styles/globals.css -o ./playground/bundle.css", {
   cwd: root,
   stdio: "inherit",
 });
+
+const app = spawn(
+  "bun",
+  [
+    "build",
+    "--target=browser",
+    "--outfile",
+    "./playground/main.js",
+    "./playground-entry.tsx",
+    "--watch",
+  ],
+  { cwd: root, stdio: "inherit", shell: false },
+);
 
 const tailwind = spawn(
   "bun",
@@ -36,6 +57,7 @@ const server = spawn("bun", ["--hot", "./playground/index.html"], {
 });
 
 function shutdown() {
+  app.kill("SIGTERM");
   tailwind.kill("SIGTERM");
   server.kill("SIGTERM");
   process.exit(0);
@@ -43,6 +65,11 @@ function shutdown() {
 
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
+
+app.on("exit", (code: number | null, signal: string | null) => {
+  if (signal === "SIGTERM") return;
+  if (code !== 0 && code !== null) shutdown();
+});
 
 tailwind.on("exit", (code: number | null, signal: string | null) => {
   if (signal === "SIGTERM") return;

@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 
-import { TextTrails } from "@/registry/components/texttrails";
+import { TextTrails } from "./registry/components/texttrails";
 
 /** Entry for `bun run playground` — mounts TextTrails for manual testing only. */
 
@@ -11,6 +11,6 @@ if (!root) {
 
 createRoot(root).render(
   <div className="flex min-h-screen items-center justify-center bg-neutral-950 p-8">
-    <TextTrails />
+    <TextTrails text="text-ui" fontClassName="font-blob" />
   </div>,
 );
