@@ -8,12 +8,12 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-export type TextTrailsProps = React.ComponentProps<"div"> & {
+export type EchoTextProps = React.ComponentProps<"div"> & {
   text?: string;
   fontClassName?: string;
 };
 
-export function TextTrails({
+export function EchoText({
   text = "text",
   className,
   fontClassName,
@@ -22,7 +22,7 @@ export function TextTrails({
   onPointerMove,
   onPointerLeave,
   ...props
-}: TextTrailsProps) {
+}: EchoTextProps) {
   const [offset, setOffset] = React.useState({ x: 0, y: 0 });
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -62,7 +62,7 @@ export function TextTrails({
   return (
     <div
       aria-label={ariaLabel ?? text}
-      data-slot="texttrails"
+      data-slot="echo-text"
       role={role}
       className={cn("relative select-none", className)}
       onPointerMove={handlePointerMove}

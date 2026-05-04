@@ -1,4 +1,4 @@
-# TextTrails
+# EchoText
 
 Layered stroke text that follows the pointer. Shipped as a [shadcn/ui registry](https://ui.shadcn.com/docs/registry) component; install via the **`@text-ui`** namespace (see below).
 
@@ -6,7 +6,7 @@ Layered stroke text that follows the pointer. Shipped as a [shadcn/ui registry](
 
 Add a `demo.gif` in the repo root, then this image will work:
 
-![TextTrails demo](./demo.gif)
+![EchoText demo](./demo.gif)
 
 ## Install
 
@@ -21,7 +21,7 @@ In your app (after [`shadcn init`](https://ui.shadcn.com/docs/components-json)),
 Then:
 
 ```bash
-npx shadcn@latest add @text-ui/texttrails
+npx shadcn@latest add @text-ui/echo-text
 ```
 
 The **`@text-ui`** prefix is whatever key you use in `components.json` — it is not issued by shadcn. To have `@text-ui` work **without** that snippet for everyone, you’d need your registry listed in the [official directory](https://ui.shadcn.com/docs/registry/registry-index) (PR to `shadcn-ui/ui`) using the same name.
@@ -29,16 +29,16 @@ The **`@text-ui`** prefix is whatever key you use in `components.json` — it is
 Add [`utils`](https://ui.shadcn.com/docs/components/utils) first if `@/lib/utils` / `cn` is missing.
 
 ```tsx
-import { TextTrails } from "@/registry/components/texttrails";
+import { EchoText } from "@/registry/components/echo-text";
 
-<TextTrails text="hello" />
+<EchoText text="hello" />
 ```
 
 ## GitHub Pages
 
 In the repo **Settings → Pages**: deploy from branch **`main`** with folder **`/` (root)** — not `/docs`.
 
-- Registry index (same content): [`/r/registry.json`](https://joelachance.github.io/text-ui/r/registry.json) · [`/r/text-ui.json`](https://joelachance.github.io/text-ui/r/text-ui.json) — the second matches the `@text-ui` namespace in the URL; **`npx shadcn add`** still uses the component name, e.g. `@text-ui/texttrails` → [`/r/texttrails.json`](https://joelachance.github.io/text-ui/r/texttrails.json).
+- Registry index (same content): [`/r/registry.json`](https://joelachance.github.io/text-ui/r/registry.json) · [`/r/text-ui.json`](https://joelachance.github.io/text-ui/r/text-ui.json) — the second matches the `@text-ui` namespace in the URL; **`npx shadcn add`** still uses the component name, e.g. `@text-ui/echo-text` → [`/r/echo-text.json`](https://joelachance.github.io/text-ui/r/echo-text.json).
 - **`/docs`** redirects to the [README on GitHub](https://github.com/joelachance/text-ui#readme).
 
 After changing the component, run `bun run pages:prepare` and commit the updated `r/` folder.
