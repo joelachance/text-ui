@@ -9,16 +9,6 @@
 @source "../playground-entry.tsx";
 @source "../playground/**/*.{html,tsx}";
 
-@font-face {
-  font-family: "Blob";
-  src: url("../Blob.woff2") format("woff2");
-  font-display: swap;
-}
-
-.font-blob {
-  font-family: "Blob", sans-serif;
-}
-
 /* Minimal theme so `text-foreground` matches shadcn-style usage locally */
 @theme {
   --color-foreground: oklch(0.985 0 0);

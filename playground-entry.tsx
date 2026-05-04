@@ -11,6 +11,6 @@ if (!root) {
 
 createRoot(root).render(
   <div className="flex min-h-screen items-center justify-center bg-neutral-950 p-8">
-    <EchoText text="echo text" fontClassName="font-blob" />
+    <EchoText text="echo" />
   </div>,
 );
